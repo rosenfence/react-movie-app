@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Movie } from '../components';
+import { Movie, Button } from '../components';
+import styled from 'styled-components';
+
+const MovieListDiv = styled.div`
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -17,14 +24,15 @@ const Home = () => {
 
   return (
     <div>
+      <Button>🎬</Button>
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <div>
+        <MovieListDiv>
           {movies.map((movie) => (
             <Movie key={movie.id} id={movie.id} coverImg={movie.medium_cover_image} title={movie.title} rating={movie.rating} summary={movie.summary} genres={movie.genres} />
           ))}
-        </div>
+        </MovieListDiv>
       )}
     </div>
   );

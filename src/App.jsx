@@ -1,13 +1,17 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import GlobalStyles from './GlobalStyle';
 import { Home, Detail } from './routes';
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/movie/:id' element={<Detail />} />
-    </Routes>
+    <>
+      <GlobalStyles />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/movie/:id' element={<Detail />} />
+      </Routes>
+    </>
   );
 }
 

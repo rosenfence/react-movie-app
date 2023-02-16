@@ -1,24 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { WrpperDiv, SummaryP, MovieImg, MovieTitleLink } from './Movie.Style';
 
 const Movie = ({ id, coverImg, title, rating, summary, genres }) => {
   return (
-    <div>
+    <WrpperDiv>
       <Link to={`/movie/${id}`}>
-        <img src={coverImg} alt={title} />
+        <MovieImg src={coverImg} alt={title} />
       </Link>
       <h2>
-        <Link to={`/movie/${id}`}>
+        <MovieTitleLink to={`/movie/${id}`}>
           {title} :: ★ {rating}
-        </Link>
+        </MovieTitleLink>
       </h2>
-      <p>{summary}</p>
+      <SummaryP fontSize='20px' color='black'>
+        {summary}
+      </SummaryP>
       <ul>
         {genres.map((genre) => (
           <li key={genre}>{genre}</li>
         ))}
       </ul>
-    </div>
+    </WrpperDiv>
   );
 };
 
