@@ -24,7 +24,6 @@ const Home = () => {
 
   return (
     <div>
-      <Button>🎬</Button>
       {loading ? (
         <h1>Loading...</h1>
       ) : (
