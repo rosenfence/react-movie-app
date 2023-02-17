@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Loading } from '../components';
+import { Loading, Header } from '../components';
 
 const Detail = () => {
   const [loading, setLoading] = useState(true);
@@ -24,14 +24,17 @@ const Detail = () => {
       {loading ? (
         <Loading />
       ) : (
-        <div>
-          <h1>
-            {movieDetail.title_long} :: ★ {movieDetail.rating}
-          </h1>
-          <img src={movieDetail.large_cover_image} alt={movieDetail.title} />
-          <h3>Runtime : {movieDetail.runtime} min</h3>
-          <div>{movieDetail.description_full}</div>
-        </div>
+        <>
+          <Header />
+          <div>
+            <h1>
+              {movieDetail.title_long} :: ★ {movieDetail.rating}
+            </h1>
+            <img src={movieDetail.large_cover_image} alt={movieDetail.title} />
+            <h3>Runtime : {movieDetail.runtime} min</h3>
+            <div>{movieDetail.description_full}</div>
+          </div>
+        </>
       )}
     </>
   );
