@@ -7,15 +7,24 @@ const AboveDiv = styled.div`
   width: 100%;
   height: 500px;
   padding-top: 50px;
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 const HalfDiv = styled.div`
   display: flex;
   align-items: ${(props) => props.align};
   justify-content: ${(props) => props.justifyContent};
+  padding-left: 50px;
+  padding-right: 50px;
 
   width: 50%;
   height: 100%;
+  @media screen and (max-width: 900px) {
+    width: 100%;
+    height: 50%;
+  }
 `;
 
 const MainJumpAnimation = keyframes`
@@ -32,12 +41,15 @@ const MainJumpAnimation = keyframes`
 const IdolImg = styled.img`
   animation: ${MainJumpAnimation} ${(props) => props.duration} alternate-reverse infinite;
   animation-delay: ${(props) => props.delay};
+  @media screen and (max-width: 600px) {
+    width: 120px;
+  }
 `;
 
 const SloganSpan = styled.div`
   font-size: 50px;
   font-weight: bold;
-  color: #eee;
+  color: #aaa;
 `;
 
 const MovieListDiv = styled.div`
@@ -72,9 +84,8 @@ const Home = () => {
           <AboveDiv>
             <HalfDiv>
               <SloganSpan>
-                모두가
-                <br />
-                이루어낸 이야기
+                <div>모두가</div>
+                <div style={{ paddingLeft: '30px' }}>이루어낸 이야기</div>
               </SloganSpan>
             </HalfDiv>
             <HalfDiv justifyContent='flex-end' align='flex-end'>
