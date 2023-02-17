@@ -48,7 +48,7 @@ const Home = () => {
     <>
       {loading ? (
         <LodingDiv>
-          <LoadingImg src='/ayaseEri.png' />
+          <LoadingImg src='/ayaseEli.png' />
           <LodingH1>Loading...</LodingH1>
         </LodingDiv>
       ) : (
