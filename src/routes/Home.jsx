@@ -8,6 +8,26 @@ const MovieListDiv = styled.div`
   justify-content: center;
   flex-wrap: wrap;
 `;
+const LodingDiv = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const LoadingImg = styled.img`
+  width: 30%;
+`;
+
+const LodingH1 = styled.h1`
+  width: 100vw;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+`;
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -26,7 +46,10 @@ const Home = () => {
   return (
     <>
       {loading ? (
-        <h1>Loading...</h1>
+        <LodingDiv>
+          <LoadingImg src='https://t1.daumcdn.net/cfile/tistory/2351663D5384BD9708' />
+          <LodingH1>Loading...</LodingH1>
+        </LodingDiv>
       ) : (
         <MovieListDiv>
           {movies.map((movie) => (
