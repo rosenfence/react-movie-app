@@ -6,7 +6,7 @@ const WrpperDiv = styled.div`
   align-items: center;
   flex-direction: column;
   margin-bottom: 100px;
-  max-width: 600px;
+  max-width: 300px;
 `;
 
 const SummaryP = styled.p`
@@ -18,7 +18,7 @@ const SummaryP = styled.p`
 `;
 
 const MovieImg = styled.img`
-  width: 300px;
+  width: 50%;
 `;
 
 const MovieTitleLink = styled(Link)`
