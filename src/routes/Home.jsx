@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Movie } from '../components';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const MovieListDiv = styled.div`
   width: 100%;
@@ -8,7 +8,7 @@ const MovieListDiv = styled.div`
   justify-content: center;
   flex-wrap: wrap;
 `;
-const LodingDiv = styled.div`
+const LoadingDiv = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -17,11 +17,22 @@ const LodingDiv = styled.div`
   flex-direction: column;
 `;
 
-const LoadingImg = styled.img`
-  margin-bottom: 30px;
+const loadingAnimation = keyframes`
+  0%{
+    transform: rotate(-20deg);
+  }
+  100%{
+    transform: rotate(20deg);
+  }
 `;
 
-const LodingH1 = styled.h1`
+const LoadingImg = styled.img`
+  margin-bottom: 30px;
+
+  animation: ${loadingAnimation} 0.5s alternate-reverse infinite;
+`;
+
+const LoadingH1 = styled.h1`
   width: 100vw;
   text-align: center;
   font-size: 40px;
@@ -36,7 +47,7 @@ const Home = () => {
   const getMovies = async () => {
     const json = await (await fetch('https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year')).json();
     setMovies(json.data.movies);
-    setLoading(false);
+    setTimeout(() => setLoading(false), 10000);
   };
 
   useEffect(() => {
@@ -46,10 +57,10 @@ const Home = () => {
   return (
     <>
       {loading ? (
-        <LodingDiv>
-          <LoadingImg src='/ayaseEli.png' />
-          <LodingH1>Loading...</LodingH1>
-        </LodingDiv>
+        <LoadingDiv>
+          <LoadingImg src='/yazawaNico.png' />
+          <LoadingH1>Loading...</LoadingH1>
+        </LoadingDiv>
       ) : (
         <MovieListDiv>
           {movies.map((movie) => (
