@@ -19,6 +19,7 @@ const LodingDiv = styled.div`
 
 const LoadingImg = styled.img`
   width: 200px;
+  margin-bottom: 30px;
 `;
 
 const LodingH1 = styled.h1`
@@ -47,7 +48,7 @@ const Home = () => {
     <>
       {loading ? (
         <LodingDiv>
-          <LoadingImg src='https://t1.daumcdn.net/cfile/tistory/2351663D5384BD9708' />
+          <LoadingImg src='/ayaseEri.png' />
           <LodingH1>Loading...</LodingH1>
         </LodingDiv>
       ) : (
