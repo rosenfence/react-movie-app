@@ -5,9 +5,12 @@ const GlobalStyles = createGlobalStyle`
   ${reset}
 
     body{
+      width: 100vw;
+      height: 100vh;
       display: flex;
       justify-content: center;
-      background: linear-gradient(#eee, #884499);
+      background: linear-gradient(#eee, #e20082);
+      background-attachment: fixed;
     }
     
 
