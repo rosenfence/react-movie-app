@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { Button } from '../components';
+import { useParams } from 'react-router-dom';
+import { Loading } from '../components';
 
 const Detail = () => {
   const [loading, setLoading] = useState(true);
@@ -9,8 +9,8 @@ const Detail = () => {
   const { id } = useParams();
   const getMovie = async () => {
     const json = await (await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)).json();
-    setLoading(false);
     setMovieDetail(json.data.movie);
+    setTimeout(() => setLoading(false), 6000);
   };
 
   useEffect(() => {
@@ -20,12 +20,9 @@ const Detail = () => {
   console.log(movieDetail);
 
   return (
-    <div>
-      <Link to='/'>
-        <Button>🏠</Button>
-      </Link>
+    <>
       {loading ? (
-        <h1>loading...</h1>
+        <Loading idol="nishikinoMaki.png" />
       ) : (
         <div>
           <h1>
@@ -36,7 +33,7 @@ const Detail = () => {
           <div>{movieDetail.description_full}</div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
