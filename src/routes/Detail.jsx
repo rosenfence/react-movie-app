@@ -22,7 +22,7 @@ const Detail = () => {
   return (
     <>
       {loading ? (
-        <Loading idol='/ayaseEli.png' />
+        <Loading />
       ) : (
         <div>
           <h1>

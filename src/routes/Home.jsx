@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <>
       {loading ? (
-        <Loading idol='/nishikinoMaki.png' />
+        <Loading />
       ) : (
         <MovieListDiv>
           {movies.map((movie) => (
