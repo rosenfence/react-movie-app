@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Movie, Loading, Header } from '../components';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const AboveDiv = styled.div`
   display: flex;
@@ -16,6 +16,22 @@ const HalfDiv = styled.div`
 
   width: 50%;
   height: 100%;
+`;
+
+const MainJumpAnimation = keyframes`
+    0%{
+    transform: rotate(-3deg);
+    margin-bottom: 0px;
+    }
+    100%{
+    transform: rotate(3deg);
+    margin-bottom: 20px;
+    }
+`;
+
+const IdolImg = styled.img`
+  animation: ${MainJumpAnimation} ${(props) => props.duration} alternate-reverse infinite;
+  animation-delay: ${(props) => props.delay};
 `;
 
 const SloganSpan = styled.div`
@@ -62,9 +78,9 @@ const Home = () => {
               </SloganSpan>
             </HalfDiv>
             <HalfDiv justifyContent='flex-end' align='flex-end'>
-              <img src='/eli.png' />
-              <img src='/maki.png' />
-              <img src='/nico.png' />
+              <IdolImg src='/eli.png' delay='0s' duration='0.7s' />
+              <IdolImg src='/maki.png' delay='1.1s' duration='0.5s' />
+              <IdolImg src='/nico.png' delay='0.7s' duration='0.3s' />
             </HalfDiv>
           </AboveDiv>
           <MovieListDiv>
