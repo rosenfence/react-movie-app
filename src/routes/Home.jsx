@@ -18,7 +18,6 @@ const LodingDiv = styled.div`
 `;
 
 const LoadingImg = styled.img`
-  width: 200px;
   margin-bottom: 30px;
 `;
 
