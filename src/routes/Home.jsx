@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Movie , Loading } from '../components'; 
+import { Movie, Loading } from '../components';
 import styled from 'styled-components';
 
 const MovieListDiv = styled.div`
@@ -16,7 +16,7 @@ const Home = () => {
   const getMovies = async () => {
     const json = await (await fetch('https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year')).json();
     setMovies(json.data.movies);
-    setTimeout(() => setLoading(false), 10000);
+    setTimeout(() => setLoading(false), 5000);
   };
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <>
       {loading ? (
-        <Loading idol="nishikinoMaki.png" />
+        <Loading idol='/nishikinoMaki.png' />
       ) : (
         <MovieListDiv>
           {movies.map((movie) => (

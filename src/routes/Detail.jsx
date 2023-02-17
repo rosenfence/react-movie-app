@@ -10,7 +10,7 @@ const Detail = () => {
   const getMovie = async () => {
     const json = await (await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)).json();
     setMovieDetail(json.data.movie);
-    setTimeout(() => setLoading(false), 6000);
+    setTimeout(() => setLoading(false), 3000);
   };
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Detail = () => {
   return (
     <>
       {loading ? (
-        <Loading idol="nishikinoMaki.png" />
+        <Loading idol='/ayaseEli.png' />
       ) : (
         <div>
           <h1>
