@@ -79,8 +79,8 @@ const Home = () => {
             </HalfDiv>
             <HalfDiv justifyContent='flex-end' align='flex-end'>
               <IdolImg src='/eli.png' delay='0s' duration='0.7s' />
-              <IdolImg src='/maki.png' delay='1.1s' duration='0.5s' />
               <IdolImg src='/nico.png' delay='0.7s' duration='0.3s' />
+              <IdolImg src='/maki.png' delay='1.1s' duration='0.5s' />
             </HalfDiv>
           </AboveDiv>
           <MovieListDiv>

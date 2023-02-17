@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
       height: 100vh;
       display: flex;
       justify-content: center;
-      background: linear-gradient(#eee, #e20082);
+      background: linear-gradient(#eee 70%, #e20082 100%);
       background-attachment: fixed;
     }
     
