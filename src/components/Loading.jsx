@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const LoadingDiv = styled.div`
@@ -45,12 +45,18 @@ const LoadingH1 = styled.h1`
 `;
 
 const Loading = () => {
-  const idolArr = ['/eli.png', '/maki.png', '/nico.png'];
-  const idx = Math.floor(Math.random() * idolArr.length); // 0, 1, 2
+  const [index, setIndex] = useState(0);
+
+  const idolArr = ['/eli.png', '/maki.png', '/nico.png', '/hanayo.png', '/honoka.png', '/kotori.png', '/nozomi.png', '/rin.png', '/umi.png'];
+
+  useEffect(() => {
+    let idx = Math.floor(Math.random() * idolArr.length);
+    setIndex(idx);
+  }, []);
 
   return (
     <LoadingDiv>
-      <LoadingImg src={idolArr[idx]} />
+      <LoadingImg src={idolArr[index]} />
       <LoadingH1>Loading...</LoadingH1>
     </LoadingDiv>
   );
