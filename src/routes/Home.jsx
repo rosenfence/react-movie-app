@@ -18,7 +18,7 @@ const LodingDiv = styled.div`
 `;
 
 const LoadingImg = styled.img`
-  width: 30%;
+  width: 200px;
 `;
 
 const LodingH1 = styled.h1`
