@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Movie, Button } from '../components';
+import { Movie } from '../components';
 import styled from 'styled-components';
 
 const MovieListDiv = styled.div`
-  max-width: 1200px;
+  width: 100%;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 `;
 
@@ -23,7 +24,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <>
       {loading ? (
         <h1>Loading...</h1>
       ) : (
@@ -33,7 +34,7 @@ const Home = () => {
           ))}
         </MovieListDiv>
       )}
-    </div>
+    </>
   );
 };
 

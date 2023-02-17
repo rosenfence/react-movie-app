@@ -4,6 +4,13 @@ import reset from 'styled-reset';
 const GlobalStyles = createGlobalStyle` 
   ${reset}
 
+    body{
+      display: flex;
+      justify-content: center;
+      background: linear-gradient(#eee, #884499);
+    }
+    
+
     a{
         text-decoration: none;
         color: inherit;
