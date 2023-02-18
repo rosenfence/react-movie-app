@@ -39,7 +39,6 @@ const MainJumpAnimation = keyframes`
 
 const IdolImg = styled.img`
   animation: ${MainJumpAnimation} ${(props) => props.duration} alternate-reverse infinite;
-  animation-delay: ${(props) => props.delay};
   @media screen and (max-width: 600px) {
     width: 120px;
   }
@@ -66,7 +65,7 @@ const Home = () => {
   const getMovies = async () => {
     const json = await (await fetch('https://yts.mx/api/v2/list_movies.json?minimum_rating=6&sort_by=year')).json();
     setMovies(json.data.movies);
-    setTimeout(() => setLoading(false), 5000); 
+    setTimeout(() => setLoading(false), 5000);
   };
 
   useEffect(() => {
@@ -84,13 +83,13 @@ const Home = () => {
             <HalfDiv>
               <SloganSpan>
                 <div>모두가</div>
-                  <div style={{ paddingLeft: '30px'}}>이루어낸 이야기</div>
+                <div style={{ paddingLeft: '30px' }}>이루어낸 이야기</div>
               </SloganSpan>
             </HalfDiv>
             <HalfDiv justifyContent='flex-end' align='flex-end'>
-              <IdolImg src='/eli.png' delay='0s' duration='0.7s' />
-              <IdolImg src='/nico.png' delay='0.7s' duration='0.3s' />
-              <IdolImg src='/maki.png' delay='1.1s' duration='0.5s' />
+              <IdolImg src='/eli.png' duration='0.7s' />
+              <IdolImg src='/nico.png' duration='0.3s' />
+              <IdolImg src='/maki.png' duration='0.5s' />
             </HalfDiv>
           </AboveDiv>
           <MovieListDiv>
