@@ -6,6 +6,9 @@ const LayoutDiv = styled.div`
   align-items: center;
   flex-direction: column;
   max-width: 1250px;
+  height: 100vh;
+  height: -webkit-fill-available;
+  height: fill-available;
 `;
 
 const Layout = ({ children }) => {
