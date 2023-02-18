@@ -1,7 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Loading, Header, Rating } from '../components';
-import { TitleDiv, TitleImg, TitleLetterDiv } from './Detail.style';
+import {
+  TitleDiv,
+  TitleImg,
+  TitleLetterDiv,
+  DiscriptionDiv,
+  PosterDiv,
+  PosterImg,
+  LetterDiv,
+  InfoDiv,
+  MovieTitleDiv,
+  MovieInfoDiv,
+  YearRuntimeDiv,
+  YearRuntimeSpan,
+  GenreDiv,
+  GenreSpan,
+  DisDiv,
+} from './Detail.style';
 
 const Detail = () => {
   const [loading, setLoading] = useState(true);
@@ -33,9 +49,32 @@ const Detail = () => {
             <Rating width={movieDetail.rating}>{`★ :: ${movieDetail.rating}`}</Rating>
           </TitleDiv>
 
-          <img src={movieDetail.large_cover_image} alt={movieDetail.title} />
-          <h3>Runtime : {movieDetail.runtime !== 0 ? `${movieDetail.runtime} min` : `정보 없음`} </h3>
-          <div>{movieDetail.description_full}</div>
+          <DiscriptionDiv>
+            <PosterDiv>
+              <PosterImg src={movieDetail.large_cover_image} alt={movieDetail.title} />
+            </PosterDiv>
+            <LetterDiv>
+              <InfoDiv>
+                <MovieTitleDiv>{movieDetail.title}</MovieTitleDiv>
+                <MovieInfoDiv>
+                  <YearRuntimeDiv>
+                    <YearRuntimeSpan>{movieDetail.year}</YearRuntimeSpan>
+                    <YearRuntimeSpan>{movieDetail.runtime !== 0 ? `${movieDetail.runtime} min` : `정보 없음`}</YearRuntimeSpan>
+                  </YearRuntimeDiv>
+                  <GenreDiv>
+                    {movieDetail.genres.map((genre) => (
+                      <GenreSpan>{genre}</GenreSpan>
+                    ))}
+                  </GenreDiv>
+                </MovieInfoDiv>
+              </InfoDiv>
+              <DisDiv>{movieDetail.description_full}</DisDiv>
+            </LetterDiv>
+          </DiscriptionDiv>
+
+          {/* 
+          <h3>Runtime :  </h3>
+           */}
         </>
       )}
     </>
