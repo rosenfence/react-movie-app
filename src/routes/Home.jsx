@@ -16,8 +16,8 @@ const HalfDiv = styled.div`
   display: flex;
   align-items: ${(props) => props.align};
   justify-content: ${(props) => props.justifyContent};
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
   width: 50%;
   height: 100%;
   @media screen and (max-width: 900px) {
@@ -40,14 +40,17 @@ const MainJumpAnimation = keyframes`
 const IdolImg = styled.img`
   animation: ${MainJumpAnimation} ${(props) => props.duration} alternate-reverse infinite;
   @media screen and (max-width: 600px) {
-    width: 120px;
+    width: 100px;
   }
 `;
 
 const SloganSpan = styled.div`
-  font-size: 50px;
+  font-size: 43px;
   font-weight: bold;
   color: #aaa;
+  @media screen and (max-width: 900px) {
+    font-size: 9vw;
+  }
 `;
 
 const MovieListDiv = styled.div`
