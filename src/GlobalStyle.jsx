@@ -4,13 +4,9 @@ import reset from 'styled-reset';
 const GlobalStyles = createGlobalStyle` 
   ${reset}
 
-    :root {
-      --vh: 100%;
-    }
-
     body {
       width: 100vw;
-      height: var(--vh);
+      height: 100vh;
       display: flex;
       justify-content: center;
       background: linear-gradient(#eee 70%, #e20082 100%);
