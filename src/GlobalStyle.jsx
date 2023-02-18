@@ -4,7 +4,7 @@ import reset from 'styled-reset';
 const GlobalStyles = createGlobalStyle` 
   ${reset}
 
-    body{
+    body {
       width: 100vw;
       height: 100vh;
       display: flex;
@@ -12,21 +12,23 @@ const GlobalStyles = createGlobalStyle`
       background: linear-gradient(#eee 70%, #e20082 100%);
       background-attachment: fixed;
     }
-    
 
-    a{
+    a {
         text-decoration: none;
         color: inherit;
     }
-    *{
+
+    * {
         box-sizing: border-box;
     }
+
     input, textarea { 
       -moz-user-select: auto;
       -webkit-user-select: auto;
       -ms-user-select: auto;
       user-select: auto;
     }
+
     input:focus {
       outline: none;
     }

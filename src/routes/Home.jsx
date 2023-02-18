@@ -18,7 +18,6 @@ const HalfDiv = styled.div`
   justify-content: ${(props) => props.justifyContent};
   padding-left: 50px;
   padding-right: 50px;
-
   width: 50%;
   height: 100%;
   @media screen and (max-width: 900px) {
@@ -67,7 +66,7 @@ const Home = () => {
   const getMovies = async () => {
     const json = await (await fetch('https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year')).json();
     setMovies(json.data.movies);
-    setTimeout(() => setLoading(false), 5000);
+    setTimeout(() => setLoading(false), 5000); 
   };
 
   useEffect(() => {
@@ -85,7 +84,7 @@ const Home = () => {
             <HalfDiv>
               <SloganSpan>
                 <div>모두가</div>
-                <div style={{ paddingLeft: '30px' }}>이루어낸 이야기</div>
+                  <div style={{ paddingLeft: '30px'}}>이루어낸 이야기</div>
               </SloganSpan>
             </HalfDiv>
             <HalfDiv justifyContent='flex-end' align='flex-end'>

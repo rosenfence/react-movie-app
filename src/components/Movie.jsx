@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { WrpperDiv, SummaryP, MovieImg, MovieTitleLink } from './Movie.Style';
+import { WrpperDiv, SummaryP, MovieImg, GenresUl, MoiveH2, GenreLi, MovieTitleLink } from './Movie.Style';
 
 const Movie = ({ id, coverImg, title, rating, summary, genres }) => {
   return (
@@ -8,19 +8,19 @@ const Movie = ({ id, coverImg, title, rating, summary, genres }) => {
       <Link to={`/movie/${id}`}>
         <MovieImg src={coverImg} alt={title} />
       </Link>
-      <h2>
+      <MoiveH2>
         <MovieTitleLink to={`/movie/${id}`}>
           {title} :: ★ {rating}
         </MovieTitleLink>
-      </h2>
-      <SummaryP fontSize='20px' color='black'>
-        {summary}
+      </MoiveH2>
+      <SummaryP fontSize='17px' color='#616161'>
+        {summary.length > 110 ? `${summary.slice(0, 110)}...` : summary}
       </SummaryP>
-      <ul>
+      <GenresUl>
         {genres.map((genre) => (
-          <li key={genre}>{genre}</li>
+          <GenreLi key={genre}>{genre}</GenreLi>
         ))}
-      </ul>
+      </GenresUl>
     </WrpperDiv>
   );
 };

@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 
 const LoadingDiv = styled.div`
   width: 100vw;
-  max-width: 100%;
+  max-width: 1250px;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -22,10 +22,10 @@ const loadingAnimation = keyframes`
 
 const loadingTextAnimaiton = keyframes`
     0%{
-        color: #fff;
+        color: #e20082;
     }
     100% {
-        color: #ccc;
+        color: #ff57b1;
     }
 `;
 
@@ -39,9 +39,9 @@ const LoadingH1 = styled.h1`
   text-align: center;
   font-size: 40px;
   font-weight: bold;
-  color: #fff;
-
+  color: #e20082;
   animation: ${loadingTextAnimaiton} 1s alternate-reverse infinite;
+  font-family: 'Gajraj One', cursive;
 `;
 
 const Loading = () => {

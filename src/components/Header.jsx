@@ -8,8 +8,8 @@ const HeaderWrapperDiv = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  width: 100vw;
-  max-width: 1250px;
+  width: 100%;
+  max-width: 100vw;
   height: 70px;
   border-bottom: 3px solid #fff;
   background-color: #e20082;
@@ -41,9 +41,7 @@ const SearchIconSpan = styled.span`
 const SearchInput = styled.input`
   height: 100%;
   width: 100%;
-
   padding-left: 10px;
-
   border: none;
   border-radius: 5px;
 `;
