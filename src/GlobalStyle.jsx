@@ -5,8 +5,8 @@ const GlobalStyles = createGlobalStyle`
   ${reset}
 
     body {
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       display: flex;
       justify-content: center;
       background: linear-gradient(#eee 70%, #e20082 100%);
